@@ -1,14 +1,18 @@
+//interface que define o contrato para regras de desconto
 interface descontoRegra {
     aplicar(carrinho: carrinho): void;
 }
 
+//produtos
 type produtos = 'Roupas' | 'Canecas' | 'Hardware';
 
+//classe para representar o carrinho
 class itemCarrinho {
     public nome: string;
     public preco: number;
     public categoria: produtos;
 
+    //metodo construtor
     constructor(nome: string, preco: number, categoria: produtos) {
         this.nome = nome;
         this.preco = preco;
@@ -16,6 +20,7 @@ class itemCarrinho {
     }
 }
 
+//classe carrinho para adicionar e realizar os descontos
 class carrinho {
     private itens: itemCarrinho[] = [];
     private regras: descontoRegra[] = [];
