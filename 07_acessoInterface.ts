@@ -1,15 +1,18 @@
+//interface que define a estrutura de um usuario
 interface usuario {
     email: string;
     senha: string;  
 }
 
+//classe que gerencia o sistema de login
 class sistemaDeLogin {
     acessarRecursoProtegido() {
         throw new Error("Method not implemented.");
     }
     private usuarios: usuario[] = [{ email: "alunoDaniel@gmail.com", senha: "1234" }];
     private usuarioOn: usuario | null = null;
-
+    
+    //metodo para autenticar um usuario com base no email e senha fornecidos
     public autenticar(email: string, senha: string): boolean {
         const usuario = this.usuarios.find(u => u.email === email && u.senha === senha);
         if (usuario) {
@@ -21,7 +24,7 @@ class sistemaDeLogin {
             return false;
         }
     }
-
+    //metodo para verificar se ha um usuario autenticado no sistema
     public vereficarAutenticacao(): boolean {
         return this.usuarioOn !== null;
     }
