@@ -1,9 +1,11 @@
+//interface cliente que é a estrutura de um objeto cliente
 interface cliente {
     nome: string;
     cpf: string;
     rendaMensal: number;
 }
 
+//função que valida um objeto para ele obedecer à estrutura pela interface
 function validarCliente(json: any): cliente {
     if (!json || typeof json !== 'object') {
         throw new Error("Não é válido.");
@@ -26,6 +28,7 @@ function validarCliente(json: any): cliente {
     return { nome, cpf, rendaMensal };
 }
 
+//try-catch para testar a função validarCliente e imprimir erros
 try {
     const cliente = validarCliente({
         nome: "Carlos Daniel",
