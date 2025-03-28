@@ -1,7 +1,9 @@
+//definição do pagamento para representar diferentes formas de pagamento
 type Pagamento =
   | { tipo: "cartao"; numero: string; cvv: string }
   | { tipo: "boleto"; codigoBarras: string };
 
+//função para processar pagamentos com base no tipo fornecido
 function processarPagamento(pagamento: Pagamento): string {
     if (pagamento.tipo === "cartão"){
         const { numero, cvv } = pagamento;
