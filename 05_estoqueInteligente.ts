@@ -1,9 +1,11 @@
+//uma interface com os atributos do objeto
 interface produto {
     id: number;
     nome: string;
     quantidade: number;
 }
 
+//uma classe para armazenar em um array os produtos podendo utilizar metodos para remover, adicionar e listar
 class estoque<T extends produto> {
     private produtos: T[] = [];
 
