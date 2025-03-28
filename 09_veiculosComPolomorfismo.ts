@@ -1,7 +1,9 @@
+//classe abstrata veiculo que define um metodo abstrato para calcular o custo
 abstract class veiculo {
     abstract calcularCusto(distancia: number): number;
 }
 
+//3 classe para abaixo que estende a classe veiculo e calcula o valor por km
 class Carro extends veiculo {
     calcularCusto(distancia: number): number {
         const Km = 2;
@@ -23,6 +25,7 @@ class caminhao extends veiculo {
     }
 }
 
+//calcula o frente com base na distancia do veiculo
 function calcularFrete(veiculo: veiculo, distancia: number): number {
     return veiculo.calcularCusto(distancia);
 }
