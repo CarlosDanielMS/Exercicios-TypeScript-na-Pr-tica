@@ -1,3 +1,4 @@
+//função assincrona que simula uma consulta ao valor de uma moeda
 async function dinheiro(moeda: string): Promise<{ moeda: string; valor: number }> {
     return new Promise((resolve, reject) => {
         const tempo = Math.random() * 3000 + 1000;
@@ -14,6 +15,7 @@ async function dinheiro(moeda: string): Promise<{ moeda: string; valor: number }
     });
 }
 
+//função assincrona que chama a API simulada e trata possiveis erros
 async function chamarApi(){
     try {
         const crypto = await dinheiro("BTC");
