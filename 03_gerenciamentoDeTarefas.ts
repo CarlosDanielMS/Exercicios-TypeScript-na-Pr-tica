@@ -1,26 +1,18 @@
-//Você está criando um app de gestão de tarefas para uma startup. 
-// Cada tarefa pode estar em um dos seguintes estados: pendente, 
-//fazendo ou concluída.
-///Implemente um sistema com as seguintes funcionalidades:
-//Criação de tarefas.
-//Alteração de status.
-//Listagem de tarefas por status.
-//Cálculo da quantidade total de tarefas concluídas.
-//Utilize interfaces e classes para organizar o código.
-
-
+// enum usado para criar um conjunto de valores nomeados.
 enum tarefaStatus {
     pendente = "pendente",
     fazendo = "fazendo",
     concluida = "concluida"
 }
 
+//uma interface tarefas que é atribuido alguns atributos para ter um controle
 interface tarefas {
     id: number;
     titulo: string;
     status: tarefaStatus;
 }
 
+//uma classe para gerenciar as tarefas armazenando
 class GerenciamentoDeTarefas {
     private tarefas: tarefas[] = [];
     private proximoId = 1;
